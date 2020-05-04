@@ -18,7 +18,7 @@ const addTextWatermarkToImage = async function(inputFile, outputFile, text) {
     startApp();
   } 
   catch (error) {
-    console.log('Something went wrong... Try again');
+    console.log('Something wrong. Try again');
   }
 };
 
@@ -39,7 +39,7 @@ const addImageWatermarkToImage = async function(inputFile, outputFile, watermark
     startApp();
   } 
   catch (error) {
-    console.log('Something went wrong. Try again');
+    console.log('Something went wrong... Try again');
   }
 };
 
@@ -50,6 +50,7 @@ const prepareOutputFilename = (filename) => {
 
 const startApp = async () => {
 
+ 
   const answer = await inquirer.prompt([{
       name: 'start',
       message: 'Hi! Welcome to "Watermark manager". Copy your image files to `/img` folder. Then you\'ll be able to use them in the app. Are you ready?',
@@ -83,7 +84,7 @@ const startApp = async () => {
         './img/' + prepareOutputFilename(options.inputImage), 
         options.watermarkText);
     } else {      
-      console.log('Something went wrong... Try again')
+      console.log('Something wrong. Try again')
     }
   } 
   else {
@@ -101,7 +102,7 @@ const startApp = async () => {
         './img/' + prepareOutputFilename(options.inputImage), 
         './img/' + options.watermarkImage);
     } else {      
-      console.log('Something went wrong... Try again')
+      console.log('Something wrong. Try again')
     }
   }
 };
